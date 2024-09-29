@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\SpecialistController;
 use App\Http\Controllers\Api\AppointmentController;
 use App\Http\Controllers\Api\AvailabilityController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 // Группа маршрутов с middleware для аутентификации
@@ -14,3 +15,4 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('availability', AvailabilityController::class);
 });
 
+Route::apiResource('roles', RoleController::class);

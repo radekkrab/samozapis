@@ -5,12 +5,14 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import RolesDropdown from "@/Components/RolesDropdown.vue";
 
 const form = useForm({
     name: '',
     email: '',
     password: '',
     password_confirmation: '',
+    role: 1
 });
 
 const submit = () => {
@@ -39,6 +41,13 @@ const submit = () => {
                 />
 
                 <InputError class="mt-2" :message="form.errors.name" />
+            </div>
+
+            <div class="mt-4">
+                <InputLabel for="role" value="Role" />
+                <RolesDropdown
+                    v-model="form.role"
+                ></RolesDropdown>
             </div>
 
             <div class="mt-4">
